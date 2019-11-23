@@ -27,7 +27,7 @@ namespace WishList.Controllers
         
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult PostRegister(RegisterViewModel registerViewModel)
+        public IActionResult Register(RegisterViewModel registerViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -50,7 +50,7 @@ namespace WishList.Controllers
 
                 return View(registerViewModel);
             }
-            return RedirectToAction("Home", "Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
