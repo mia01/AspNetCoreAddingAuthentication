@@ -22,7 +22,7 @@ namespace WishList.Controllers
         [AllowAnonymous]
         public IActionResult Register()
         {
-            return View();
+            return View("Register");
         }
         
         [HttpPost]
@@ -33,6 +33,7 @@ namespace WishList.Controllers
             {
                 return View(registerViewModel);
             }
+
             var user = new ApplicationUser
             {
                 UserName = registerViewModel.Email,
@@ -50,6 +51,7 @@ namespace WishList.Controllers
 
                 return View(registerViewModel);
             }
+
             return RedirectToAction("Index", "Home");
         }
     }
